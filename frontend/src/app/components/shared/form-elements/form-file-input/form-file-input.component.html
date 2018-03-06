@@ -1,0 +1,4 @@
+<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+<input [ngClass]="fieldClass" [id]="elementName" [name]="elementName" type="file" [(ngModel)]="model"
+    [placeholder]="placeholder" [disabled]="isDisabled" [required]="isRequired" (change)="onFileChange($event)" 
+    #formElement="ngModel">

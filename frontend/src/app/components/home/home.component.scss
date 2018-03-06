@@ -1,0 +1,17 @@
+@import "~styles.scss";
+
+:host {
+    .outer-frame {
+        position: relative;
+        top: 200px;
+        text-align: center;
+        width: 100%;
+        #restaurantName {
+            height: 40px;
+            width: 400px;
+        }
+        #generateBtn {
+            height: 40px;
+        }
+    }
+}

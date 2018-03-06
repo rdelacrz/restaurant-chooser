@@ -1,0 +1,20 @@
+<page [header]="header">
+  <div id="outsideFrame">
+    <div class="user-frame" *ngFor="let user of users | async">
+      <img [src]="buildImgSrc(user.file_data)" *ngIf="user">
+      <div class="user_name">
+        {{user.first_name}}<span *ngIf="user.middle_name"> {{user.middle_name}}</span> {{user.last_name}}
+      </div>
+      <div class="pref_desc" *ngIf="user.preferences_desc">
+        <hr>
+        {{user.preferences_desc}}
+      </div>
+    </div>
+    <button id="addUserFrame" class="user-frame" (click)="onAddUser()">
+      <i class="fa fa-user-circle"></i>
+      <div class="user-frame-text">
+        <i class="fa fa-plus"></i>Add User
+      </div>
+    </button>
+  </div>
+</page>

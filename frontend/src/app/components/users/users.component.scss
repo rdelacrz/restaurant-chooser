@@ -1,0 +1,50 @@
+@import "~styles.scss";
+
+$user-frame-height: 400px;
+$user-frame-width: 350px;
+
+:host {
+    #outsideFrame {
+        .user-frame {
+            border: black 2px solid;
+            border-radius: 10px;
+            color: black;
+            display: inline-block;
+            background-color: #F8F8F8;
+            height: $user-frame-height;
+            width: $user-frame-width;
+            margin-right: 40px;
+            padding: 30px;
+            text-align: center;
+
+            img {
+                border: black 1px solid;
+                height: 80%;
+                width: 80%;
+            }
+        }
+        #addUserFrame {
+            position: absolute;
+
+            // Button states
+            &:hover {
+                background-color: #E8E8E8;
+                border-color: $primary-button-color;
+                color: $primary-button-color
+            }
+    
+            // Button internal widgets
+            .fa-user-circle {
+                font-size: 200px;
+            }
+            .user-frame-text {
+                font-family: $poppins-regular;
+                font-size: 40px;
+                margin-top: 20px;
+                .fa-plus {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '~styles.scss';
+
+:host {
+    .container-fluid {
+        background-color: $secondary-color;
+        height: 100vh;
+        .page-header {
+            padding-top: 20px;
+            h1 {
+                color: black;
+                font-family: $poppins-bold;
+            }
+        }
+    }
+}

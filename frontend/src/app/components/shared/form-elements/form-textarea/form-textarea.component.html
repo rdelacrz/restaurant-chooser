@@ -1,0 +1,4 @@
+<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+<textarea [ngClass]="fieldClass" [id]="elementName" [name]="elementName" [(ngModel)]="model" (input)="update()" 
+    [placeholder]="placeholder" [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled" 
+    [required]="isRequired" #formElement="ngModel"></textarea>

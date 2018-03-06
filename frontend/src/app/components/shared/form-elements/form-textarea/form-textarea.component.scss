@@ -1,0 +1,13 @@
+@import '~styles.scss';
+
+:host {
+    @include form-element(16px);
+
+    label {
+        position: relative;
+        bottom: 10px;
+    }
+    textarea {
+        min-height: 50px;
+    }
+}

@@ -1,0 +1,10 @@
+@import '~styles.scss';
+
+:host {
+    @include form-element(16px);
+
+    input {
+        background-color: white;
+        border: gray 1px solid;
+    }
+}

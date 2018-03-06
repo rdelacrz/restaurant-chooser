@@ -1,0 +1,11 @@
+{
+	"database" : "restaurant_chooser.db",
+	"dataDirectory" : "app_data",
+	"imagesFolder": "images",
+	"mongoDatabase": "mongo_db",
+	"mongoExePath": "B:\\Program Files\\MongoDB\\Server\\3.6\\bin\\mongod.exe", 
+	"appEnvironment" : {
+		"development" : "frontend\\src",
+		"production" : "frontend\\dist"
+	}
+}

@@ -1,0 +1,89 @@
+@import "~styles.scss";
+
+$nav-color: $primary-color;
+$toggle-length: 25px;
+
+:host {
+    #sideNav {
+        // Sets position of navigation bar to the left side
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transition: $nav-transition-time;
+        width: $side-nav-width;
+        z-index: 1;
+
+        // Other attributes
+        background-color: $nav-color;
+
+        &.collapsed {
+            margin-left: -$side-nav-width;
+            & > #sideNavToggle {
+                left: $side-nav-width + 10px;
+                padding-right: 0;   // Gets rid of padding on collapse
+            }
+        }
+
+        #sideNavTitle {
+            border-bottom: 1px solid $white-color;
+            color: $white-color;
+            font-family: $poppins-bold;
+            font-size: 50px;
+            height: 100px;
+            padding-left: 20px;
+            h1 {
+                line-height: 100px;
+            }
+        }
+        li {
+            display: block;
+            border-bottom: 1px solid $white-color;
+            &:hover {
+                background-color: $nav-background-hover-color;
+                cursor: pointer;
+                a {
+                    color: $primary-button-color;
+                    text-decoration: none;
+                }
+            }
+            a {
+                color: $white-color;
+                display: inline-block;
+                font-family: $poppins-light;
+                font-size: 20px;
+                height: 50px;
+                line-height: 50px;
+                padding-left: 20px;
+                width: 100%;
+            }
+        }
+        #sideNavToggle {
+            position: absolute;
+            top: 35px;
+            left: $side-nav-width - $toggle-length - 10px;
+            background-color: $nav-color;
+            border: solid 1px $white-color;
+            border-radius: 5px;
+            height: $toggle-length;
+            width: $toggle-length;
+            line-height: $toggle-length;
+            padding-bottom: 5px;
+            padding-right: 2px;
+            text-align: center;
+            transition: $nav-transition-time;
+            &:hover {
+                background-color: $nav-background-hover-color;
+                cursor: pointer;
+                .fa {
+                    color: $primary-button-color;
+                }
+            }
+            .fa {
+                color: $white-color;
+                font-size: 20px;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~wfk-poppins/poppins";
+
+// Colors
+$primary-color: #F2B705;
+$secondary-color: rgb(243, 243, 243);
+$white-color: rgb(255, 253, 245);
+$banner-color: #025159;
+$nav-background-hover-color: rgb(255, 202, 110);
+$primary-button-color: #F27405;
+
+// Navigation bar-related values
+$side-nav-width: 200px;
+$nav-transition-time: 0.5s;
+
+// General button styles
+button {
+    background-color: $primary-color;
+    border: solid 1px white;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: $poppins-regular;
+    &:hover {
+        background-color: #F27405;
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+}
+
+// Mixins
+@mixin form-element($font-size) {
+    label {
+        font-family: $poppins-medium;
+        font-size: $font-size;
+        line-height: $font-size;
+        text-align: right;
+        &.required::after {
+            content: "*";
+            color: red;
+        }
+    }
+    input {
+        font-family: $poppins-regular;
+        font-size: $font-size;
+        height: $font-size * 2;
+    }
+}
+
+@mixin button($height: 40px) {
+    button {
+        border: none;
+        color: $white-color;
+        font-family: $poppins-regular;
+        height: $height;
+        &.btn-primary {
+            background-color: $primary-button-color;
+            &:hover {
+                background-color: $primary-color;
+                &:disabled {
+                    background-color: $primary-button-color;    // Overrides default hover behavior
+                }
+            }
+        }
+        &.btn-secondary {
+        }
+        &.btn-link {
+            color: $primary-button-color;
+        }
+    }
+}

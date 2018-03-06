@@ -1,0 +1,17 @@
+<page [header]="header">
+  <table *ngIf="restaurants.length > 0">
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of restaurants | async">
+        <td>{{r.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="restaurants.length == 0">
+    No restaurants have been added yet... please add a restaurant!
+  </div>
+</page>
