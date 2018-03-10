@@ -65,6 +65,27 @@ class MongoStorage(object):
 
         return file_data
 
+    def update_file_data(self, object_id, data):
+        """
+        Update the file data within the file collection linked to the given object id.
+
+        :param object_id: Object id associated with the file data.
+        
+        :param data: Dictionary containing the updated file data parameters.
+
+        :return: Data dictionary containing the new overall file data information.
+        """
+
+        # Performs query for item
+        collection_filter = { "_id" : ObjectId(object_id) }
+        file_data = self.file_collection.replace_one(collection_filter, data)
+
+        # Removes id from dictionary - it is not needed
+        if (file_data):
+            file_data.pop("_id")
+        
+        return file_data
+
     def delete_file_data(self, object_id):
         """
         Deletes the file data within the file collection using the given object id.
@@ -90,8 +111,9 @@ class MongoStorage(object):
 
         self.client.close()
 
-# Run this file directly within a terminal to run the Mongo DB 
+MONGO_DB_PATH = os.path.join(get_base_path(), DATA_DIR, MONGO_DB_NAME)
+MONGO_CMD = '"{0}" --dbpath "{1}"'.format(MONGO_EXE_PATH, MONGO_DB_PATH)
+
+# Run this file directly within a terminal to run the Mongo DB
 if __name__=='__main__':
-    mongo_db_path = os.path.join(get_base_path(), DATA_DIR, MONGO_DB_NAME)
-    cmd = '"{0}" --dbpath "{1}"'.format(MONGO_EXE_PATH, mongo_db_path)
-    subprocess.call(cmd)
+    subprocess.call(MONGO_CMD)

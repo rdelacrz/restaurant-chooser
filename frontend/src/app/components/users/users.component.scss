@@ -5,6 +5,7 @@ $user-frame-width: 350px;
 
 :host {
     #outsideFrame {
+        width: 100%;
         .user-frame {
             border: black 2px solid;
             border-radius: 10px;
@@ -16,6 +17,7 @@ $user-frame-width: 350px;
             margin-right: 40px;
             padding: 30px;
             text-align: center;
+            vertical-align: top;
 
             img {
                 border: black 1px solid;
@@ -24,8 +26,6 @@ $user-frame-width: 350px;
             }
         }
         #addUserFrame {
-            position: absolute;
-
             // Button states
             &:hover {
                 background-color: #E8E8E8;

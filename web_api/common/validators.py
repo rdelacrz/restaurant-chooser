@@ -1,5 +1,5 @@
 """
-This module contains multiple validators for use by the api.
+This module contains multiple validators for use by the parser arguments.
 """
 
 # Built-in modules

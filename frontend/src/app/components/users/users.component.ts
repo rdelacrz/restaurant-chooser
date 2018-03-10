@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FileData } from '../../view-models';
-import { UserService } from '../../core/services';
+import { FileData, FullUserData } from '../../view-models';
+import { ModalService, UserService } from '../../core/services';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -13,7 +13,8 @@ export class UsersComponent implements OnInit {
   header = "Users";
   users : any;
 
-  constructor(private router: Router, private userService: UserService, private domSanitizer: DomSanitizer) { }
+  constructor(private domSanitizer: DomSanitizer, private modalService: ModalService, private router: Router, 
+    private userService: UserService) { }
 
   ngOnInit() {
     this.users = this.userService.getUsers();
@@ -26,5 +27,9 @@ export class UsersComponent implements OnInit {
 
   onAddUser() {
     this.router.navigateByUrl("/add-user");
+  }
+
+  promptUserDetails(user: FullUserData) {
+    this.modalService.activateModal("User Info", user.first_name + " " + user.last_name);
   }
 }

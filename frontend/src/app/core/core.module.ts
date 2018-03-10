@@ -1,16 +1,19 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ApiService, CommonService, ListItemService, NavigationService, RestaurantService, UrlService, UserService } 
-  from './services';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService, CommonService, ListItemService, ModalService, NavigationService, RestaurantService, UrlService, 
+  UserService } from './services';
 
 @NgModule({
   imports: [
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [
     ApiService,
     CommonService,
     ListItemService,
+    ModalService,
     NavigationService,
     RestaurantService,
     UrlService,

@@ -1,6 +1,6 @@
 """
 This module contains methods that query specific values from the database in order to produce the 
-range of choices that certain arguments will use.
+range of choices that certain parser arguments will use.
 """
 
 # User-defined modules
