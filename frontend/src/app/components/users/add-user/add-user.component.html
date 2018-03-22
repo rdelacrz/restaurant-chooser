@@ -1,35 +1,35 @@
 <page [header]="header">
   <form id="addUserForm" name="addUserForm" #addUserForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <form-textbox elementName="firstName" label="First Name"  [model]="model.first_name" (modelChange)="model.first_name=$event" 
-        placeholder="Enter first name" labelColNum="2" fieldColNum="4" [parentForm]="addUserForm" isRequired="true" maxLength="50">
+    <div class="form-group row">
+      <form-textbox class="col-12" elementName="firstName" label="First Name"  [model]="model.first_name" (modelChange)="model.first_name=$event" 
+        placeholder="Enter first name" labelColNum="3" fieldColNum="9" [parentForm]="addUserForm" isRequired="true" maxLength="50">
       </form-textbox>
     </div>
-    <div class="form-group">
-      <form-textbox elementName="middleName" label="Middle Name" [model]="model.middle_name" (modelChange)="model.middle_name=$event" 
-        placeholder="Enter middle name" labelColNum="2" fieldColNum="4" maxLength="50" [parentForm]="addUserForm">
+    <div class="form-group row">
+      <form-textbox class="col-12" elementName="middleName" label="Middle Name" [model]="model.middle_name" (modelChange)="model.middle_name=$event" 
+        placeholder="Enter middle name" labelColNum="3" fieldColNum="9" maxLength="50" [parentForm]="addUserForm">
       </form-textbox>
     </div>
-    <div class="form-group">
-      <form-textbox elementName="lastName" label="Last Name" [model]="model.last_name" (modelChange)="model.last_name=$event" 
-        placeholder="Enter last name" labelColNum="2" fieldColNum="4" isRequired="true" maxLength="50" [parentForm]="addUserForm">
+    <div class="form-group row">
+      <form-textbox class="col-12" elementName="lastName" label="Last Name" [model]="model.last_name" (modelChange)="model.last_name=$event" 
+        placeholder="Enter last name" labelColNum="3" fieldColNum="9" isRequired="true" maxLength="50" [parentForm]="addUserForm">
       </form-textbox>
     </div>
-    <div class="form-group">
-      <form-textarea elementName="prefDesc" label="Preferences Description" [model]="model.preferences_desc" 
+    <div class="form-group row">
+      <form-textarea class="col-12" elementName="prefDesc" label="Preferences Description" [model]="model.preferences_desc" 
         (modelChange)="model.preferences_desc=$event" placeholder="Enter description of the user's preferences" 
-        labelColNum="2" fieldColNum="4" maxLength="2000" [parentForm]="addUserForm">
+        labelColNum="3" fieldColNum="9" maxLength="2000" [parentForm]="addUserForm">
       </form-textarea>
     </div>
-    <div class="form-group">
-      <form-file-input elementName="imagePath" label="User Profile Picture" (fileLoadStarted)="fileLoading=true" 
-        (fileChange)="setFile($event)" labelColNum="2" fieldColNum="4" [parentForm]="addUserForm" #fileInput>
+    <div class="form-group row">
+      <form-file-input class="col-12" elementName="imagePath" label="User Profile Picture" (fileLoadStarted)="fileLoading=true" 
+        (fileChange)="setFile($event)" labelColNum="3" fieldColNum="9" [parentForm]="addUserForm" #fileInput>
       </form-file-input>
     </div>
     <!-- Final row for buttons -->
     <div class="form-group row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-4">
+      <div class="col-3"></div>
+      <div class="col-9">
         <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.form.valid || fileLoading">Add User</button>
         <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
         <button type="button" class="btn btn-link" (click)="onClear()">Clear</button>

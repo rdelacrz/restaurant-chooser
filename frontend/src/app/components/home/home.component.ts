@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  header = "Restaurant Generator";
+  animationTriggered = false;
 
   constructor() { }
 
   ngOnInit() {
-    
+    setTimeout(()=> this.triggerAnimation(), 100);
   }
 
+  triggerAnimation() {
+    this.animationTriggered = true;
+  }
 }

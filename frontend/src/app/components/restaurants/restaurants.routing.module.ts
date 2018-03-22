@@ -6,7 +6,4 @@ const routes: Routes = [
   { path: 'restaurants', component: RestaurantsComponent }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)]
-})
-export class RestaurantsRoutingModule { }
+export const RestaurantsRouting = RouterModule.forChild(routes);

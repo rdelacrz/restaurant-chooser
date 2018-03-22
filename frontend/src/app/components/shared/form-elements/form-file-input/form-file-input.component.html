@@ -1,4 +1,7 @@
-<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
-<input [ngClass]="fieldClass" [id]="elementName" [name]="elementName" type="file" [(ngModel)]="model"
-    [placeholder]="placeholder" [disabled]="isDisabled" [required]="isRequired" (change)="onFileChange($event)" 
-    #formElement="ngModel">
+<div class="form-group row">
+  <label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+  <div [ngClass]="fieldClass" >
+    <input [id]="elementName" [name]="elementName" type="file" class="form-control" [(ngModel)]="model" [placeholder]="placeholder"
+      [disabled]="isDisabled" [required]="isRequired" (change)="onFileChange($event)" #formElement="ngModel">
+  </div>
+</div>

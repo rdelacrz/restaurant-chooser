@@ -1,4 +1,8 @@
-<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
-<input [ngClass]="fieldClass" [id]="elementName" [name]="elementName" [type]="type" [(ngModel)]="model" (input)="update()" 
-    [placeholder]="placeholder" [min]="min" [max]="max" [maxlength]="maxLength" [readonly]="isReadOnly" 
-    [disabled]="isDisabled" [required]="isRequired" #formElement="ngModel">
+<div class="form-group row">
+  <label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+  <div [ngClass]="fieldClass">
+    <input [id]="elementName" [name]="elementName" [type]="type" class="form-control" [(ngModel)]="model" (input)="update()"
+      [placeholder]="placeholder" [min]="min" [max]="max" [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled"
+      [required]="isRequired" #formElement="ngModel">
+  </div>
+</div>

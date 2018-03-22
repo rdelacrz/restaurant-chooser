@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app.routing.module';
+import { AppRouting } from './app.routing.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './components/home/home.module';
-import { SharedModule } from './components/shared/shared.module';
 import { RestaurantsModule } from './components/restaurants/restaurants.module';
+import { SharedModule } from './components/shared/shared.module';
 import { UsersModule } from './components/users/users.module';
 
 import { AppComponent } from './app.component';
@@ -20,11 +20,11 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CommonModule,
     FormsModule,
-    AppRoutingModule,
+    AppRouting,
     CoreModule,
     HomeModule,
-    SharedModule,
     RestaurantsModule,
+    SharedModule,
     UsersModule
   ],
   providers: [],

@@ -4,11 +4,7 @@ $banner-height: 100px;
 
 :host {
     #appBody {
-        margin-left: $side-nav-width;
-        transition: 0.5s;
-        &.expanded {
-            margin-left: 0;
-            width: 100%;
-        }
+        background-color: $primary-color;
+        height: 100vh;
     }
 }

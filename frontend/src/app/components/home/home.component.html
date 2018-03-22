@@ -1,6 +1,17 @@
-<page [header]="header">
-  <div class="outer-frame">
-    <input id="restaurantName" name="restaurantName" type="text" readonly>
+<page>
+  <div id="introFrame">
+    <div id="introMessage" class="container-fluid" [ngClass]="{'animation-triggered':animationTriggered}">
+      <h1>Welcome to the RJH Restaurant Chooser!</h1>
+      <p>
+        This website was designed by Roger Delacruz for the purpose of selecting a restaurant for him and his girlfriend to
+        go to.
+      </p>
+      <p id="instructions">Click the button below to generate a restaurant! (Note that only a currently-open restaurant will be chosen).</p>
+    </div>
+  </div>
+  <div id="generateFrame">
+    <form-textbox elementName="restaurantName" isReadOnly="true" fieldColNum="6">
+    </form-textbox>
     <button id="generateBtn" name="generateBtn">Generate Restaurant</button>
   </div>
 </page>

@@ -12,7 +12,7 @@ export class BaseFormElement implements OnInit {
   @Input() isReadOnly: boolean;
   @Input() isDisabled: boolean;
   @Input() isRequired: boolean;
-  @Input() placeholder: string;
+  @Input() placeholder: string = "";
   @Input() min: number;
   @Input() max: number;
   @Input() maxLength: number;
@@ -21,27 +21,22 @@ export class BaseFormElement implements OnInit {
   @Output() modelChange = new EventEmitter<any>();
 
   // Field classes
-  labelClass = "";
+  labelClass = "col-form-label";
   fieldClass = "";
 
   ngOnInit() {
     // Adds col-sm classes
     if (this.labelColNum)
-      this.labelClass = "col-sm-" + this.labelColNum;
+      this.labelClass += " col-" + this.labelColNum;
     if (this.fieldColNum)
-      this.fieldClass = "col-sm-" + this.fieldColNum;
+      this.fieldClass += "col-" + this.fieldColNum;
 
     // Adds required class (adds extra space as necessary)
     if (this.isRequired)
       this.labelClass += this.labelClass.length > 0? " required": "required";
   }
 
-  ngAfterViewInit() {
-    // Adds current control to the parent form (in a way that doesn't cause an Angular exception)
-    setTimeout(_ => this.addControlToForm());
-  }
-
-  addControlToForm() {
+  ngDoCheck() {
     this.parentForm.form.addControl(this.elementName, this.formElement.control);
   }
 

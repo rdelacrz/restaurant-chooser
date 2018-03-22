@@ -8,7 +8,4 @@ const routes: Routes = [
   { path: 'add-user', component: AddUserComponent }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)]
-})
-export class UsersRoutingModule { }
+export const UsersRouting = RouterModule.forChild(routes);

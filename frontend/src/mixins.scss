@@ -1,0 +1,130 @@
+/* These are mixins that can be used by the application */
+
+@import 'global-variables';
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin form-element($font-size) {
+  label {
+    font-family: $poppins-medium;
+    font-size: $font-size;
+    line-height: $font-size;
+    text-align: right;
+    &.required::after {
+      content: "*";
+      color: red;
+    }
+  }
+  input {
+    border-radius: 5px;
+    font-family: $poppins-regular;
+    font-size: $font-size;
+    height: $font-size * 2;
+  }
+  textarea {
+    border-radius: 5px;
+    font-family: $poppins-regular;
+    font-size: $font-size;
+  }
+}
+
+// Links
+@mixin a ($text-color, $font-size, $hover-color:"", $hover-decoration:underline) {
+  a {
+    color: $text-color;
+    font-family: $poppins-light;
+    font-size: $font-size;
+    @include transition(0.5s);
+    &:hover {
+      @if $hover-color !="" {
+        color: $hover-color;
+      }
+      @else {
+        color: rgba($text-color, 0.7);
+      }
+      cursor: pointer;
+      text-decoration: $hover-decoration;
+    }
+  }
+}
+
+@mixin button($height: 40px) {
+  button {
+    border: none;
+    color: $white-color;
+    font-family: $poppins-regular;
+    height: $height;
+    &.btn-primary {
+      background-color: $primary-button-color;
+      &:hover {
+        background-color: $primary-button-hover-color;
+        &:disabled {
+          background-color: $primary-button-color; // Overrides default hover behavior
+        }
+      }
+    }
+    &.btn-secondary {}
+    &.btn-link {
+      color: $primary-button-color;
+    }
+  }
+}
+
+// Mixins for animations
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// Mixins for transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}

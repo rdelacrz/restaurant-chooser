@@ -3,10 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { BannerComponent } from './banner/banner.component';
 import { ModalComponent } from './modal/modal.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PageComponent } from './page/page.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 
 // Form elements
 import { FormTextAreaComponent } from './form-elements/form-textarea/form-textarea.component';
@@ -15,10 +14,9 @@ import { FormFileInputComponent } from './form-elements/form-file-input/form-fil
 
 @NgModule({
   declarations: [
-    BannerComponent,
     ModalComponent,
+    NavBarComponent,
     PageComponent,
-    SideNavComponent,
     FormTextAreaComponent,
     FormTextboxComponent,
     FormFileInputComponent
@@ -29,10 +27,9 @@ import { FormFileInputComponent } from './form-elements/form-file-input/form-fil
     RouterModule
   ],
   exports: [
-    BannerComponent,
     ModalComponent,
+    NavBarComponent,
     PageComponent,
-    SideNavComponent,
     FormTextAreaComponent,
     FormTextboxComponent,
     FormFileInputComponent

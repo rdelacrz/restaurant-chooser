@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
-import { UsersRoutingModule } from './users.routing.module';
+import { UsersRouting } from './users.routing.module';
 
 import { UsersComponent } from './users.component';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -17,7 +17,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     CommonModule,
     FormsModule,
     SharedModule,
-    UsersRoutingModule
+    UsersRouting
   ]
 })
 export class UsersModule { }

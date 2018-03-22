@@ -1,0 +1,20 @@
+/* These are SCSS variables that will be used throughout the application */
+
+// Colors
+$primary-color: #FFE017;
+$secondary-color: #E8B323;
+$white-color: #fffdf5;
+$nav-bar-color: #1C1702;
+$primary-button-color: #E85F09;
+$primary-button-hover-color: #FF9603;
+$input-focus-color: orange;
+
+// Navigation bar-related values
+$nav-bar-height: 100px;
+$nav-transition-time: 0.5s;
+
+// Screen sizes
+$screen-sm-min: 576px;  // Small tablets and large smartphones (landscape view)
+$screen-md-min: 768px;  // Small tablets (portrait view)
+$screen-lg-min: 992px;  // Tablets and small desktops
+$screen-xl-min: 1200px; // Large tablets and desktops
