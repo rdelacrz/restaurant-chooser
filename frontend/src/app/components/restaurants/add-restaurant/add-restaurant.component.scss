@@ -1,0 +1,14 @@
+@import "~styles.scss";
+
+:host {
+    @include button();
+
+    .btn-primary {
+        margin-right: 10px;
+        width: 200px;
+    }
+
+    .btn-secondary {
+        width: 100px;
+    }
+}

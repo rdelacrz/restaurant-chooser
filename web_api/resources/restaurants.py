@@ -7,6 +7,7 @@ from flask import jsonify
 from flask_restful import Resource, reqparse
 
 # User-defined modules
+from services import RestaurantService
 from web_api.common.choices import state_ids
 from web_api.common.validators import phone_number, zip_code
 from web_api.resources import get_db
@@ -21,6 +22,7 @@ post_parser.add_argument("state_id", type=int, choices=state_ids)
 post_parser.add_argument("zip", type=zip_code)
 post_parser.add_argument("phone_number", type=phone_number)
 post_parser.add_argument("suggester_id", type=int, required=True)
+post_parser.add_argument("schedule_items", type=list)
 
 # Defines the PUT parser
 put_parser = reqparse.RequestParser(bundle_errors=True)
@@ -32,6 +34,7 @@ put_parser.add_argument("state_id", type=int, choices=state_ids, store_missing=F
 put_parser.add_argument("zip", type=zip_code, store_missing=False)
 put_parser.add_argument("phone_number", type=phone_number, store_missing=False)
 put_parser.add_argument("suggester_id", type=int, store_missing=False)
+put_parser.add_argument("schedule_items", type=list, store_missing=False)
 
 class RestaurantBase(Resource):
     def get(self):
@@ -39,7 +42,7 @@ class RestaurantBase(Resource):
 
     def post(self):
         args = post_parser.parse_args()
-        return jsonify(get_db().insert_item("restaurants", args))
+        return jsonify(RestaurantService().insert_item(get_db(), args))
 
 class RestaurantItem(Resource):
     def get(self, id):

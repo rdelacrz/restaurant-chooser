@@ -40,7 +40,7 @@ class UserItem(Resource):
 
     def put(self, id):
         args = put_parser.parse_args()
-        return jsonify(UserService().update_item(get_db(), id, args))
+        return jsonify(UserService().update_item(get_db(), get_mongo(), id, args))
 
     def delete(self, id):
         UserService().delete_item(get_db(), id)

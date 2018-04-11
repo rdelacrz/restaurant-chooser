@@ -28,6 +28,7 @@
 }
 
 @mixin form-element($font-size) {
+  display: contents;
   label {
     font-family: $poppins-medium;
     font-size: $font-size;
@@ -38,7 +39,7 @@
       color: red;
     }
   }
-  input {
+  input, select {
     border-radius: 5px;
     font-family: $poppins-regular;
     font-size: $font-size;
@@ -48,6 +49,9 @@
     border-radius: 5px;
     font-family: $poppins-regular;
     font-size: $font-size;
+  }
+  .form-input-wrapper {
+    display: inline-block;
   }
 }
 

@@ -1,8 +1,6 @@
-<div class="form-group row">
-  <label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
-  <div [ngClass]="fieldClass">
-    <textarea [id]="elementName" [name]="elementName" class="form-control" [(ngModel)]="model" (input)="update()" 
-      [placeholder]="placeholder" [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled" [required]="isRequired" 
-      #formElement="ngModel"></textarea>
-  </div>
+<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+<div [ngClass]="fieldClass">
+  <textarea [id]="elementName" [name]="elementName" [(ngModel)]="model" (input)="update()" [placeholder]="placeholder" 
+    [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled" [required]="isRequired" 
+    [ngClass]="{'form-control-plaintext':isReadOnly,'form-control':!isReadOnly}" #formElement="ngModel"></textarea>
 </div>

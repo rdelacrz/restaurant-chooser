@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PageComponent {
   @Input() header: string;
+  @Input() showFooter: boolean;
 }

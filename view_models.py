@@ -24,3 +24,19 @@ class FileDataModel(_ParentModel):
         self.file_name = file_name
         self.file_type = file_type
         self.base_64_data = base_64_data
+
+class FullRestaurantDataModel(_ParentModel):
+    """ Model for restaraunt data along with associated schedule data. """
+
+    def __init__(self, id=None, name=None, cuisine_type_id=None, address_line=None, city=None, state_id=None, 
+            zip=None, phone_number=None, suggester_id=None, schedule_times=None):
+        self.id = id
+        self.name = name
+        self.cuisine_type_id = cuisine_type_id
+        self.address_line = address_line
+        self.city = city
+        self.state_id = state_id
+        self.zip = zip
+        self.phone_number = phone_number
+        self.suggester_id = suggester_id
+        self.schedule_times = schedule_times

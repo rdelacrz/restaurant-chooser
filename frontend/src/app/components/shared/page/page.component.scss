@@ -15,4 +15,18 @@
   #pageBody {
     padding-top: 50px;
   }
+  #pageFooter {
+    position: fixed;
+    bottom: $footer-height;
+    background-color: rgba(#7F7D6D, 0.7);
+    border-top: double 4px black;
+    border-bottom: double 4px black;
+    display: inline-block;
+    height: inherit;
+    width: 100%;
+    .container {
+      height: inherit;
+      padding: 30px 0;
+    }
+  }
 }

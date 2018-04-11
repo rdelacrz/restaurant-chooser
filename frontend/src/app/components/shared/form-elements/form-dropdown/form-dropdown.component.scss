@@ -2,8 +2,4 @@
 
 :host {
     @include form-element(16px);
-
-    textarea {
-        min-height: 50px;
-    }
 }

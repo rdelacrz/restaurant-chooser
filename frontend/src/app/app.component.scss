@@ -4,6 +4,7 @@ $banner-height: 100px;
 
 :host {
     #appBody {
+        position: relative;
         background-color: $primary-color;
         height: 100vh;
     }

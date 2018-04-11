@@ -1,5 +1,6 @@
 <modal></modal>
-<div id="appBody" [ngClass]="{'expanded':navigationService.isCollapsed}">
-    <nav-bar></nav-bar>
+<div id="appBody">
+    <site-header></site-header>
     <router-outlet></router-outlet>
+    <site-footer></site-footer>
 </div>

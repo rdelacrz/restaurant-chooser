@@ -1,17 +1,22 @@
-<page [header]="header">
-  <table *ngIf="restaurants.length > 0">
-    <thead>
-      <tr>
-        <th>Restaurant Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let r of restaurants | async">
-        <td>{{r.name}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div *ngIf="restaurants.length == 0">
-    No restaurants have been added yet... please add a restaurant!
+<page [header]="header" showFooter="true">
+  <ng-container pageBody>
+    <table *ngIf="restaurants.length > 0 else noRestaurants">
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of restaurants | async">
+          <td>{{r.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noRestaurants>
+      No restaurants have been added yet... please add a restaurant!
+    </ng-template>
+  </ng-container>
+  <div id="buttonPane" pageFooter>
+    <button type="button" class="btn btn-primary" (click)="onAddRestaurant()">Add Restaurant</button>
   </div>
 </page>

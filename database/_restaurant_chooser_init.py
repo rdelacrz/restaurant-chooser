@@ -153,9 +153,19 @@ _list_items_state_inserts = """
         ( 51, 'Wyoming', 'WY', 2 )
 """
 
+# Initial SQL INSERTS for cuisine types
+_cuisine_type_inserts ="""
+    INSERT INTO cuisine_types ( id, cuisine_type )
+    VALUES 
+        ( 1, 'Chinese'),
+        ( 2, 'Filipino'),
+        ( 3, 'Italian')
+"""
+
 # These inserts should be called when the database is created for the first time
 INITIAL_VALUE_INSERTS = [
     _item_types_inserts, 
     _list_items_weekday_inserts, 
-    _list_items_state_inserts
+    _list_items_state_inserts,
+    _cuisine_type_inserts
 ]

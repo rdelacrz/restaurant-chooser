@@ -1,6 +1,11 @@
 <div id="pageHeader" *ngIf="header">
-    <h1 class="container">{{header}}</h1>
+  <h1 class="container">{{header}}</h1>
 </div>
 <div id="pageBody" class="container">
-    <ng-content></ng-content>
+  <ng-content select="[pageBody]"></ng-content>
+</div>
+<div id="pageFooter" *ngIf="showFooter">
+  <div class="container">
+    <ng-content select="[pageFooter]"></ng-content>
+  </div>
 </div>

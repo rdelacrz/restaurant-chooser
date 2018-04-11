@@ -81,4 +81,5 @@ class BaseService(object):
         db_obj.delete_item(self.table_name, id)
 
 # Imports the different services into the top level module
+from services.restaurant_service import RestaurantService
 from services.user_service import UserService

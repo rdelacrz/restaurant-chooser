@@ -26,7 +26,7 @@ export class UsersComponent implements OnInit {
   }
 
   onAddUser() {
-    this.router.navigateByUrl("/add-user");
+    this.router.navigateByUrl("add-user");
   }
 
   promptUserDetails(user: FullUserData) {

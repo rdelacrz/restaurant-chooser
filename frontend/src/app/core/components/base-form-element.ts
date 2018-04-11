@@ -1,6 +1,7 @@
-import { EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, EventEmitter, Injectable, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 
+@Injectable()
 export class BaseFormElement implements OnInit {
   @ViewChild("formElement") formElement: NgModel;
 
@@ -24,20 +25,25 @@ export class BaseFormElement implements OnInit {
   labelClass = "col-form-label";
   fieldClass = "";
 
+  // Other parameters
+  registered = false;
+
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
   ngOnInit() {
     // Adds col-sm classes
     if (this.labelColNum)
-      this.labelClass += " col-" + this.labelColNum;
+      this.labelClass += " col-sm-" + this.labelColNum;
     if (this.fieldColNum)
-      this.fieldClass += "col-" + this.fieldColNum;
+      this.fieldClass += "col-sm-" + this.fieldColNum;
 
     // Adds required class (adds extra space as necessary)
     if (this.isRequired)
       this.labelClass += this.labelClass.length > 0? " required": "required";
-  }
 
-  ngDoCheck() {
+    // Adds form element control to parent and detects any changes to prevent Angular errors
     this.parentForm.form.addControl(this.elementName, this.formElement.control);
+    this.changeDetectorRef.detectChanges();
   }
 
   update() {

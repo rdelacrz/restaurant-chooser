@@ -12,7 +12,7 @@ export class FormTextboxComponent extends BaseFormElement implements OnInit {
   @Input() cols: number;
 
   ngOnInit() {
-    super.ngOnInit()
+    super.ngOnInit();
     this.type = this.type || "text";  // Defaults to the text type
   }
 }

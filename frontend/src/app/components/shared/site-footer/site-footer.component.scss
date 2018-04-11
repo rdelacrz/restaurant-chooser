@@ -1,0 +1,17 @@
+@import "~styles.scss";
+
+:host {
+    footer {
+        position: fixed;
+        bottom: 0px;
+        background-color: #403F37;
+        height: $footer-height;
+        line-height: $footer-height;
+        width: 100%;
+        #siteFooter {
+            color: $white-color;
+            font-family: $poppins-semi-bold;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+<div [ngClass]="fieldClass" *ngIf="!isReadOnly else readOnly">
+  <select [id]="elementName" [name]="elementName" class="form-control" [(ngModel)]="model" (change)="update()"
+      [required]="isRequired" #formElement="ngModel">
+    <option *ngIf="defaultText" [value]="defaultValue" [disabled]="!enableDefault" selected>{{defaultText}}</option>
+    <option *ngFor="let dropdown of dropdowns | async" [value]="dropdown[dropdownValueKey]">{{dropdown[dropdownTextKey]}}</option>
+  </select>
+</div>

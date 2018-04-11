@@ -1,8 +1,6 @@
-<div class="form-group row">
-  <label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
-  <div [ngClass]="fieldClass">
-    <input [id]="elementName" [name]="elementName" [type]="type" class="form-control" [(ngModel)]="model" (input)="update()"
-      [placeholder]="placeholder" [min]="min" [max]="max" [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled"
-      [required]="isRequired" #formElement="ngModel">
-  </div>
+<label [ngClass]="labelClass" [for]="elementName" *ngIf="label">{{label}}</label>
+<div class="form-input-wrapper" [ngClass]="fieldClass">
+  <input [id]="elementName" [name]="elementName" [type]="type" [(ngModel)]="model" (input)="update()" [placeholder]="placeholder" 
+    [min]="min" [max]="max" [maxlength]="maxLength" [readonly]="isReadOnly" [disabled]="isDisabled" [required]="isRequired" 
+    [ngClass]="{'form-control-plaintext':isReadOnly,'form-control':!isReadOnly}" #formElement="ngModel">
 </div>
